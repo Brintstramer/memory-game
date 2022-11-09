@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin-top: 40px;
+  margin-bottom: 35px;
+
+  &__time {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
+    position: relative;
+
+    &::before {
+      content: "min";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      font-feature-settings: "pnum" on, "lnum" on;
+      color: #fff;
+      position: absolute;
+      top: -20px;
+      left: 40px;
+    }
+
+    &::after {
+      content: "sek";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      font-feature-settings: "pnum" on, "lnum" on;
+      color: #fff;
+      position: absolute;
+      top: -20px;
+      left: 124px;
+    }
+  }
+
+  &__restart {
+    width: 246px;
+    height: 50px;
+    background: #7ac100;
+    border: none;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #fff;
+    cursor: pointer;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+  margin-top: 0;
+
+  &__card {
+    background-image: url("./img/card-back.svg");
+    width: 95px;
+    height: 133px;
+  }
+}

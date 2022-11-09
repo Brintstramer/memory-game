@@ -4,13 +4,13 @@ const app = {
     timers: [],
     cards: [],
     'user-cards': [],
-}
+};
 
 const appPage = document.querySelector('.app');
 const btnStart = appPage.querySelector('.difficulty-level__btn-start');
 const btnsLevel = appPage.querySelectorAll('.difficulty-level__btns__btn');
 
-btnsLevel.forEach(btnLevel => {
+btnsLevel.forEach((btnLevel) => {
     btnLevel.addEventListener('click', () => {
         app.level = btnLevel.textContent;
         console.log(app.level);
@@ -32,4 +32,3 @@ btnStart.addEventListener('click', () => {
             break;
     }
 });
-

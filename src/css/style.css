@@ -1,0 +1,218 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.header__time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #fff;
+  position: relative;
+}
+
+.header__time::before {
+  content: "min";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  -webkit-font-feature-settings: "pnum" on, "lnum" on;
+          font-feature-settings: "pnum" on, "lnum" on;
+  color: #fff;
+  position: absolute;
+  top: -20px;
+  left: 40px;
+}
+
+.header__time::after {
+  content: "sek";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  -webkit-font-feature-settings: "pnum" on, "lnum" on;
+          font-feature-settings: "pnum" on, "lnum" on;
+  color: #fff;
+  position: absolute;
+  top: -20px;
+  left: 124px;
+}
+
+.header__restart {
+  width: 246px;
+  height: 50px;
+  background: #7ac100;
+  border: none;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  -webkit-font-feature-settings: "pnum" on, "lnum" on;
+          font-feature-settings: "pnum" on, "lnum" on;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header__restart:active {
+  opacity: 0.7;
+}
+
+.cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+  margin-top: 0;
+}
+
+.cards__card {
+  background-image: url("./img/card-back.svg");
+  width: 95px;
+  height: 133px;
+}
+
+@font-face {
+  font-family: stratosskyengweb-regular;
+  src: url("./statosskyeng-v1.001/Web-fonts/stratosskyengweb-regular.woff2");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: stratosskyengweb-regular, sans-serif;
+}
+
+.center {
+  padding-right: calc(50% - 490px);
+  padding-left: calc(50% - 490px);
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100vh;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #004980;
+}
+
+.difficulty-level {
+  margin-top: 158px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 480px;
+  height: 459px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 12px;
+  background: #c2f5ff;
+}
+
+.difficulty-level__text {
+  max-width: 208px;
+  color: #004980;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: center;
+}
+
+.difficulty-level__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+}
+
+.difficulty-level__btns__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 98px;
+  height: 98px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: #004980;
+  border-radius: 12px;
+  background: #fff;
+  color: #0080c1;
+  cursor: pointer;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+}
+
+.difficulty-level__btns__btn:focus {
+  border: 3px solid #0080c1;
+}
+
+.difficulty-level__btn-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 246px;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  border-radius: 12px;
+  background: #7ac100;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.difficulty-level__btn-start:active {
+  opacity: 0.7;
+}
+/*# sourceMappingURL=style.css.map */

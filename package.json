@@ -1,0 +1,41 @@
+{
+    "name": "memory-game",
+    "description": "",
+    "version": "1.0.0",
+    "main": "script.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "live-server",
+        "format": "prettier --write ./src/",
+        "lint:js": "eslint ./src/**/*.js",
+        "lint:scss": "stylelint ./src/**/*.scss",
+        "stylelint:fix": "stylelint ./src/**/*.scss --fix",
+        "prepare": "husky install",
+        "lint": "npm run lint:js && npm run lint:scss"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Brintstramer/memory-game.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Brintstramer/memory-game/issues"
+    },
+    "homepage": "https://github.com/Brintstramer/memory-game#readme",
+    "keywords": [],
+    "devDependencies": {
+        "eslint": "8.27.0",
+        "eslint-config-prettier": "8.5.0",
+        "eslint-plugin-prettier": "4.2.1",
+        "husky": "^8.0.1",
+        "live-server": "1.2.2",
+        "prettier": "2.7.1",
+        "stylelint": "^14.14.1",
+        "stylelint-config-prettier": "9.0.3",
+        "stylelint-config-standard": "29.0.0",
+        "stylelint-config-standard-scss": "^6.1.0",
+        "stylelint-order": "^5.0.0",
+        "stylelint-prettier": "2.0.0"
+    }
+}
