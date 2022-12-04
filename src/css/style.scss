@@ -2,7 +2,9 @@
 
 @font-face {
   font-family: stratosskyengweb-regular;
-  src: url("./statosskyeng-v1.001/Web-fonts/stratosskyengweb-regular.woff2");
+  src:
+    url("./static/fonts/statosskyeng-v1.001/stratosskyengweb-regular.woff2"),
+    url("./static/fonts/statosskyeng-v1.001/stratosskyengweb-regular.woff");
 }
 
 * {
