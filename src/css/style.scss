@@ -1,0 +1,101 @@
+@import "game-field";
+
+@font-face {
+  font-family: stratosskyengweb-regular;
+  src: url("./statosskyeng-v1.001/Web-fonts/stratosskyengweb-regular.woff2");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: stratosskyengweb-regular, sans-serif;
+}
+
+.center {
+  padding-right: calc(50% - 490px);
+  padding-left: calc(50% - 490px);
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-content: flex-start;
+  justify-content: center;
+  background: #004980;
+}
+
+.difficulty-level {
+  margin-top: 158px;
+  display: flex;
+  width: 480px;
+  height: 459px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 12px;
+  background: #c2f5ff;
+
+  &__text {
+    max-width: 208px;
+    color: #004980;
+    font-feature-settings: "pnum" on, "lnum" on;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 24px;
+
+    &__btn {
+      display: flex;
+      width: 98px;
+      height: 98px;
+      align-items: center;
+      justify-content: center;
+      border: #004980;
+      border-radius: 12px;
+      background: #fff;
+      color: #0080c1;
+      cursor: pointer;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 72px;
+      text-align: center;
+
+      &:focus {
+        border: 3px solid #0080c1;
+      }
+    }
+  }
+
+  &__btn-start {
+    display: flex;
+    width: 246px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    background: #7ac100;
+    color: #fff;
+    cursor: pointer;
+    font-feature-settings: "pnum" on, "lnum" on;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
