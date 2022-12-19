@@ -24,7 +24,7 @@ type App = {
     'selected-cards': SelectedCards;
 };
 
-const app: App = {
+export const app: App = {
     level: '',
     timer: 0,
     cards: [
@@ -163,7 +163,7 @@ function genTime() {
     time.textContent = `${minutesValue}.${secondsValue}`;
 }
 
-function genRandomCards(cards: number) {
+export function genRandomCards(cards: number) {
     app['generated-cards'] = [];
 
     for (let i = 0; i < cards; i++) {
@@ -245,7 +245,7 @@ function renderCardsField() {
                             Math.floor(app['generated-cards'].length / 2)
                         ) {
                             renderGameFinal(
-                                './static/img/icon-win.svg',
+                                './static/img/icon-win.png',
                                 'Вы выиграли!'
                             );
                         }
@@ -254,7 +254,7 @@ function renderCardsField() {
                         app['selected-cards'].secondCard = false;
 
                         renderGameFinal(
-                            './static/img/icon-lose.svg',
+                            './static/img/icon-lose.png',
                             'Вы проиграли!'
                         );
                     }
@@ -290,5 +290,3 @@ function renderGameFinal(icon: string, winLose: string) {
         renderLevelBlock();
     });
 }
-
-// module.exports = { genTime };

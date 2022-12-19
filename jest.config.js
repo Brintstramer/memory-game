@@ -1,5 +1,6 @@
 module.exports = {
     roots: ['<rootDir>/src'],
+    testEnvironment: 'jsdom',
     transform: {
         'src/.+\\.(j|t)sx?$': 'ts-jest',
     },
