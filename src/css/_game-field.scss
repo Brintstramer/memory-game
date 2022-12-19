@@ -62,14 +62,17 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-top: 0;
 
   &__card {
-    background-image: url("./img/card-back.svg");
     width: 95px;
     height: 133px;
+
+    &_before {
+      background-image: url("./static/img/card-back.svg");
+    }
   }
 }

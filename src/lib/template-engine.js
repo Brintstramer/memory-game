@@ -37,4 +37,4 @@ function templateEngine(block) {
     return result;
 }
 
-templateEngine();
+module.exports = { templateEngine };
