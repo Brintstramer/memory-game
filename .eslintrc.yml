@@ -23,5 +23,6 @@
             'prettier/prettier': 'error',
             'camelcase': ['error'],
             'eqeqeq': ['error', 'always'],
+            '@typescript-eslint/no-var-requires': 0,
         },
 }

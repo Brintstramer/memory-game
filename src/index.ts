@@ -1,4 +1,4 @@
-import './lib/template-engine.ts';
-import './js/script.ts';
-import './js/templateScreens';
+import './lib/template-engine.js';
+import './ts/script.ts';
+import './ts/templateScreens.ts';
 import './css/style.css';

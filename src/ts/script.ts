@@ -1,6 +1,3 @@
-// import { javascript } from 'webpack';
-// import { HtmlTagObject } from 'html-webpack-plugin';
-// import { javascript } from 'webpack';
 import { templateEngine } from '../lib/template-engine';
 import {
     templateLevelBlock,
@@ -12,16 +9,16 @@ import {
 } from './templateScreens';
 
 type SelectedCards = {
-    firstCard: HTMLElement | boolean;
-    secondCard: HTMLElement | boolean;
-    firstCardValue: string;
-    secondCardValue: string;
+    firstCard: Element | boolean;
+    secondCard: Element | boolean;
+    firstCardValue: string | null;
+    secondCardValue: string | null;
     openedCards: number;
 };
 
 type App = {
-    level: string;
-    timer: any;
+    level: string | null;
+    timer: number;
     cards: string[];
     'generated-cards': string[];
     'selected-cards': SelectedCards;
@@ -29,7 +26,7 @@ type App = {
 
 const app: App = {
     level: '',
-    timer: {},
+    timer: 0,
     cards: [
         'spadesA',
         'spadesK',
@@ -78,9 +75,9 @@ const app: App = {
     },
 };
 
-const appPage: any = document.querySelector('.app');
-let cardsField: any;
-let time: any;
+const appPage = document.querySelector('.app') as Element;
+let cardsField: Element;
+let time: Element;
 let seconds = 0,
     minutes = 0;
 
@@ -97,12 +94,12 @@ function renderLevelBlock() {
 renderLevelBlock();
 
 function startGame() {
-    const btnStart: HTMLElement = appPage.querySelector(
+    const btnStart = appPage.querySelector(
         '.notification__btn-start'
-    );
-    const levels = appPage?.querySelectorAll('.notification__levels__level');
+    ) as Element;
+    const levels = appPage.querySelectorAll('.notification__levels__level');
 
-    levels?.forEach((level: any) => {
+    levels.forEach((level) => {
         level.addEventListener('click', () => {
             app.level = level.textContent;
         });
@@ -125,7 +122,7 @@ function startGame() {
     });
 }
 
-function renderGameScreen(cards: any) {
+function renderGameScreen(cards: number) {
     appPage.textContent = '';
 
     appPage.appendChild(templateEngine(templateHeader()));
@@ -135,9 +132,9 @@ function renderGameScreen(cards: any) {
 
     renderCardsField();
 
-    app.timer.interval = setInterval(genTime, 1000);
+    app.timer = Number(setInterval(genTime, 1000));
 
-    const restartGame: any = appPage.querySelector('.header__restart');
+    const restartGame = appPage.querySelector('.header__restart') as Element;
 
     restartGame.addEventListener('click', () => {
         cardsField.textContent = '';
@@ -152,7 +149,6 @@ function renderGameScreen(cards: any) {
         app['selected-cards'].secondCard = false;
     });
 }
-
 function genTime() {
     seconds += 1;
 
@@ -163,11 +159,11 @@ function genTime() {
 
     const secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     const minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-    time = appPage.querySelector('.header__time');
+    time = appPage.querySelector('.header__time') as Element;
     time.textContent = `${minutesValue}.${secondsValue}`;
 }
 
-function genRandomCards(cards: any) {
+function genRandomCards(cards: number) {
     app['generated-cards'] = [];
 
     for (let i = 0; i < cards; i++) {
@@ -187,15 +183,15 @@ function genRandomCards(cards: any) {
 }
 
 function renderCardsField() {
-    cardsField = appPage.querySelector('.cards');
+    cardsField = appPage.querySelector('.cards') as Element;
 
     cardsField.appendChild(
         templateEngine(app['generated-cards'].map(templateCards))
     );
 
-    const cards = cardsField.querySelectorAll('.cards__card');
+    const cards = cardsField.querySelectorAll<HTMLElement>('.cards__card');
 
-    cards.forEach((card: any) => {
+    cards.forEach((card) => {
         card.style.pointerEvents = 'none';
 
         setTimeout(() => {
@@ -269,24 +265,24 @@ function renderCardsField() {
 }
 
 function renderGameFinal(icon: string, winLose: string) {
-    appPage?.appendChild(templateEngine(templateTransparentBackground()));
-    appPage?.appendChild(templateEngine(templateGameFinal(icon, winLose)));
+    appPage.appendChild(templateEngine(templateTransparentBackground()));
+    appPage.appendChild(templateEngine(templateGameFinal(icon, winLose)));
 
-    const gameTime: HTMLElement = appPage.querySelector(
+    const gameTime = appPage.querySelector(
         '.notification__time__value'
-    )!;
+    ) as Element;
 
     if (time) {
         gameTime.textContent = time.textContent;
     }
 
-    clearInterval(app.timer.interval);
+    clearInterval(Number(app.timer));
     seconds = 0;
     minutes = 0;
 
-    const btnStart: HTMLElement = appPage.querySelector(
+    const btnStart = appPage.querySelector(
         '.notification__btn-start'
-    );
+    ) as Element;
 
     btnStart.addEventListener('click', () => {
         app['selected-cards'].openedCards = 0;
@@ -294,3 +290,5 @@ function renderGameFinal(icon: string, winLose: string) {
         renderLevelBlock();
     });
 }
+
+// module.exports = { genTime };

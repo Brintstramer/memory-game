@@ -2,10 +2,13 @@
     "compilerOptions": {
         "strict": true,
         "outDir": "./dist",
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "module": "es6",
         "target": "es5",
         "allowJs": true,
-        "moduleResolution": "node"
-    }
+        "moduleResolution": "node",
+        "sourceMap": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.test.ts"]
 }
